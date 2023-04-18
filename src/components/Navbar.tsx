@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <div>
+    <div className='navbar'>
     {/*Left Side*/}
         <div>
             <h1>Josh's Games</h1>
