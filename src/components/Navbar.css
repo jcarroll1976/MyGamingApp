@@ -1,5 +1,24 @@
+body {
+    background-color: black;
+}
+
 .navbar {
     display:flex;
     align-items: center;
     justify-content: space-between;
+}
+
+h1 {
+    font-family: 'Play', sans-serif;
+    color: #fff;
+}
+
+.navbarList {
+    display:flex;
+}
+
+.navbarlistItem {
+    color:#fff;
+    list-style: none;
+    margin-right: 10px;
 }
