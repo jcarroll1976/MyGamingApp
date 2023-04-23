@@ -11,14 +11,14 @@ function App() {
     fetchGames().then(data => {
       setResults(data);
     })
-  })
+  },[])
   return (
     <div className="App">
       <Navbar />
       <div>
         <ul>
           {results.map((result,i) =>
-          <li key={i}><h1>{result.name}</h1><p><img src={result.background_image} alt=''/></p></li>)}
+          <li key={i}><h1>{result.name}</h1><div className='gameImage-div'><img className='game-image' src={result.background_image} alt=''/></div></li>)}
         </ul>
       </div>
     </div>
