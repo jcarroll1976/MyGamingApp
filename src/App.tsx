@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import { Results } from './models/GameResponse';
 import { fetchGames } from './services/GameApiService';
+import Sidebar from './components/Sidebar';
 
 function App() {
   const [results,setResults] = useState<Results[]>([]);
@@ -21,6 +22,7 @@ function App() {
           <li key={i}><h1>{result.name}</h1><div className='gameImage-div'><img className='game-image' src={result.background_image} alt=''/></div></li>)}
         </ul>
       </div>
+      <Sidebar />
     </div>
   );
 }
