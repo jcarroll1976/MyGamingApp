@@ -1,5 +1,6 @@
 import React from 'react'
 import {SlPresent} from "react-icons/sl";
+import "./Sidebar.css"
 
 
 function Sidebar() {
