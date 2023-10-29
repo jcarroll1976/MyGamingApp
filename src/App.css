@@ -1,4 +1,15 @@
 .game-image {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.results-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h3 {
+    font-family: 'Play', sans-serif;
+    color: #fff; 
 }

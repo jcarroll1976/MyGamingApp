@@ -17,9 +17,9 @@ function App() {
     <div className="App">
       <Navbar />
       <div>
-        <ul>
+        <ul className='results-list'>
           {results.map((result,i) =>
-          <li key={i}><h1>{result.name}</h1><div className='gameImage-div'><img className='game-image' src={result.background_image} alt=''/></div></li>)}
+          <li key={i}><h3>{result.name}</h3><div className='gameImage-div'><img className='game-image' src={result.background_image} alt=''/></div></li>)}
         </ul>
       </div>
       <Sidebar />
