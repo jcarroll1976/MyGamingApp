@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Results } from "../models/GameResponse";
+import { Results,SingleGame } from "../models/GameResponse";
 const apiKey = process.env.REACT_APP_GAMING_API_KEY || "";
 const currentYear = new Date().getFullYear();
 
@@ -10,3 +10,4 @@ export function fetchGames(): Promise<Results[]> {
     return axios.get(baseUrl)
     .then((response) => response.data.results);
 }
+

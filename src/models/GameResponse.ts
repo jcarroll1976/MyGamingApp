@@ -3,6 +3,14 @@ export interface GameResponse {
 }
 
 export interface Results {
-    name:string;
+    name:string,
     background_image:string;
+}
+
+export interface SingleGame {
+    name: string,
+    description: string,
+    released: string,
+    background_image: string,
+    background_image_additional: string
 }
