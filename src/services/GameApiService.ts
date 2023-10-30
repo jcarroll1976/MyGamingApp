@@ -11,3 +11,7 @@ export function fetchGames(): Promise<Results[]> {
     .then((response) => response.data.results);
 }
 
+export function fetchSingleGame(name:string):Promise<SingleGame> {
+    return axios.get<SingleGame>(`https://api.rawg.io/api/games/${name}?key=${apiKey}`)
+    .then((response) => response.data);
+}
