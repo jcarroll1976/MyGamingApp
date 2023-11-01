@@ -14,3 +14,7 @@ export interface SingleGame {
     background_image: string,
     background_image_additional: string
 }
+
+export interface SearchResponse {
+    results: SingleGame[]
+}

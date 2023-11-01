@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Results,SingleGame } from "../models/GameResponse";
+import { Results,SearchResponse,SingleGame } from "../models/GameResponse";
 const apiKey = process.env.REACT_APP_GAMING_API_KEY || "";
 const currentYear = new Date().getFullYear();
 
@@ -14,4 +14,9 @@ export function fetchGames(): Promise<Results[]> {
 export function fetchSingleGame(name:string):Promise<SingleGame> {
     return axios.get<SingleGame>(`https://api.rawg.io/api/games/${name}?key=${apiKey}`)
     .then((response) => response.data);
+}
+
+export function fetchSearchResults(game:string):Promise<SingleGame[]> {
+    return axios.get<SearchResponse>(`https://api.rawg.io/api/games?key=${apiKey}&search=${game}`)
+    .then((response) => response.data.results)
 }
