@@ -1,10 +1,11 @@
 import React from 'react'
+import { SingleGame } from '../models/GameResponse'
 
 interface GameResultsProps {
-    gameResults: SearchResults
+    gameResults: SingleGame[]
 }
 
-function GameResults() {
+function GameResults({gameResults}: GameResultsProps) {
   return (
     <div>GameResults</div>
   )
