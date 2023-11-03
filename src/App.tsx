@@ -20,9 +20,6 @@ function App() {
           <Route path='/search' element = {<Search searchTerm = {searchTerm} setSearchTerm = {setSearchTerm} />} />
         </Routes>
       </Router>
-      
-      <Home />
-      <Search searchTerm = {searchTerm} setSearchTerm = {setSearchTerm} />
     </div>
   );
 }
