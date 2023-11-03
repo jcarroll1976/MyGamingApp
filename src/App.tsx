@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import { Results } from './models/GameResponse';
-import { fetchGames } from './services/GameApiService';
+
 import Sidebar from './components/Sidebar';
+import {Navigate,Route,BrowserRouter as Router, Routes} from "react-router-dom";
+import Search from './components/Search';
+import Home from './components/Home';
+
 
 function App() {
-  const [results,setResults] = useState<Results[]>([]);
-
-  useEffect(() => {
-    fetchGames().then(data => {
-      setResults(data);
-    })
-  },[])
+  const [searchTerm,setSearchTerm] = useState("");
+  
   return (
     <div className="App">
-      <Navbar />
-      <div>
-        <ul className='results-list'>
-          {results.map((result,i) =>
-          <li key={i}><h3>{result.name}</h3><div className='gameImage-div'><img className='game-image' src={result.background_image} alt=''/></div></li>)}
-        </ul>
-      </div>
-      <Sidebar />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' element = {<Home />} />
+          <Route path='/search' element = {<Search searchTerm = {searchTerm} setSearchTerm = {setSearchTerm} />} />
+        </Routes>
+      </Router>
+      
+      <Home />
+      <Search searchTerm = {searchTerm} setSearchTerm = {setSearchTerm} />
     </div>
   );
 }

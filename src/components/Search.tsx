@@ -1,35 +1,35 @@
 import React, { useState,useEffect } from 'react'
-import { SingleGame } from '../models/GameResponse';
+import { SearchResponse } from '../models/GameResponse';
 import { fetchSearchResults } from '../services/GameApiService';
 import GameResults from './GameResults';
 
+interface SearchProps {
+    setSearchTerm: (input:string) => void;
+    searchTerm: string;
+}
 
-function Search() {
-    const [searchTerm,setSearchTerm] = useState("");
-    const [searchResults,setSearchResults] = useState<SingleGame[]>([]);
+function Search({searchTerm,setSearchTerm}: SearchProps) {
+    const [input,setInput] = useState("");
+    const [searchResults,setSearchResults] = useState<SearchResponse | undefined>();
 
-    const handleSearchTerm = () => {
-        let game = searchTerm.split(" ").join("-").toLowerCase();
-        setSearchTerm(game);
+    const handleSearch = () => {
+        //let slug = input.split(" ").join("-").toLowerCase();
+        setSearchTerm(input);
+        fetchSearchResults(input).then(data => {
+            setSearchResults(data);
+        })
+        setInput("");
         setSearchTerm("");
     }
-
-    useEffect(() => {
-        if(searchTerm) {
-            fetchSearchResults(searchTerm).then(data => {
-                setSearchResults(data)
-            })
-        }
-    })
   return (
     <div>
         <input
         type='text'
-        value={searchTerm}
+        value={input}
         placeholder='Please enter the name of a game series'
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(e) => setInput(e.target.value)}
         />
-        <button onClick={handleSearchTerm}>Search</button>
+        <button onClick={handleSearch}>Search</button>
         <div>
             <GameResults gameResults={searchResults} />
         </div>
