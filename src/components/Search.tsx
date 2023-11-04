@@ -13,9 +13,9 @@ function Search({searchTerm,setSearchTerm}: SearchProps) {
     const [searchResults,setSearchResults] = useState<SearchResponse | undefined>();
 
     const handleSearch = () => {
-        //let slug = input.split(" ").join("-").toLowerCase();
-        setSearchTerm(input);
-        fetchSearchResults(input).then(data => {
+        let slug = input.split(" ").join("-").toLowerCase();
+        setSearchTerm(slug);
+        fetchSearchResults(slug).then(data => {
             setSearchResults(data);
         })
         setInput("");

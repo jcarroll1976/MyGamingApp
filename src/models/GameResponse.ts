@@ -3,11 +3,13 @@ export interface GameResponse {
 }
 
 export interface Results {
+    slug: string,
     name:string,
     background_image:string;
 }
 
 export interface SingleGame {
+    slug: string,
     name: string,
     description: string,
     released: string,

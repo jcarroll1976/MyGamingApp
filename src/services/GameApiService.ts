@@ -11,12 +11,12 @@ export function fetchGames(): Promise<Results[]> {
     .then((response) => response.data.results);
 }
 
-export function fetchSingleGame(name:string):Promise<SingleGame> {
-    return axios.get<SingleGame>(`https://api.rawg.io/api/games/${name}?key=${apiKey}`)
+export function fetchSingleGame(slug:string):Promise<SingleGame> {
+    return axios.get<SingleGame>(`https://api.rawg.io/api/games/${slug}?key=${apiKey}`)
     .then((response) => response.data);
 }
 
-export function fetchSearchResults(input:string):Promise<SearchResponse> {
-    return axios.get<SearchResponse>(`https://api.rawg.io/api/games?key=${apiKey}&search=${input}`)
+export function fetchSearchResults(slug:string):Promise<SearchResponse> {
+    return axios.get<SearchResponse>(`https://api.rawg.io/api/games?key=${apiKey}&search=${slug}`)
     .then((response) => response.data)
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SearchResponse } from '../models/GameResponse';
 import "./GameResults.css";
 
@@ -16,7 +17,7 @@ function GameResults({ gameResults }: GameResultsProps) {
                 <div>
                 {gameResults.results.map((gameResult, index) => (
                   <div key={index}>
-                    <h4>{gameResult.name}</h4>
+                    <h4><Link to={`/game/${gameResult.slug}`}>{gameResult.name}</Link></h4>
                     <div>
                       <img className='result-image' src={gameResult.background_image} alt='' />
                     </div>
