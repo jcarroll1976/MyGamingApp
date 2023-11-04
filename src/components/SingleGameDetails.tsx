@@ -7,9 +7,14 @@ function SingleGameDetails() {
   const { slug } = useParams();
   const [gameDetails, setGameDetails] = useState<SingleGame | null>(null);
 
+  const removeHtmlTags = (input:string) => {
+    return input.replace(/<[^>]*>/g, ''); // Use a regular expression to remove HTML tags
+  };
+
   useEffect(() => {
     if (slug) {
         fetchSingleGame(slug).then(data => {
+            data.description = removeHtmlTags(data.description);
             setGameDetails(data);
         })
     }
@@ -20,7 +25,7 @@ function SingleGameDetails() {
       {gameDetails ? (
         <div>
           <h2>{gameDetails.name}</h2>
-          <p>{gameDetails.description}</p>
+          <p dangerouslySetInnerHTML={{ __html: gameDetails.description }} />
           <p>Released: {gameDetails.released}</p>
           <img src={gameDetails.background_image} alt="Game Background" />
           <img src={gameDetails.background_image_additional} alt="Additional Background" />

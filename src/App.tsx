@@ -6,7 +6,7 @@ import Sidebar from './components/Sidebar';
 import {Navigate,Route,BrowserRouter as Router, Routes} from "react-router-dom";
 import Search from './components/Search';
 import Home from './components/Home';
-import SingleGame from './components/SingleGame';
+import SingleGameDetails from './components/SingleGameDetails';
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element = {<Home />} />
           <Route path='/search' element = {<Search searchTerm = {searchTerm} setSearchTerm = {setSearchTerm} />} />
-          <Route path='/game/:slug' element = {<SingleGame />} />
+          <Route path='/game/:slug' element = {<SingleGameDetails />} />
         </Routes>
       </Router>
     </div>
