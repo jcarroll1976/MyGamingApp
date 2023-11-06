@@ -20,3 +20,13 @@ export interface SingleGame {
 export interface SearchResponse {
     results: SingleGame[]
 }
+
+export interface ReleaseResponse {
+    results: Game[]
+}
+
+export interface Game {
+    id: number,
+    name: string
+    background_image: string
+}
