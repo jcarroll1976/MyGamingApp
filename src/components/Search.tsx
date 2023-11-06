@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import { SearchResponse } from '../models/GameResponse';
 import { fetchSearchResults } from '../services/GameApiService';
 import GameResults from './GameResults';
+import "./Search.css";
 
 interface SearchProps {
     setSearchTerm: (input:string) => void;
@@ -22,7 +23,7 @@ function Search({searchTerm,setSearchTerm}: SearchProps) {
         setSearchTerm("");
     }
   return (
-    <div>
+    <div className='search-div'>
         <input
         type='text'
         value={input}

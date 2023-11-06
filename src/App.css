@@ -10,6 +10,10 @@
 }
 
 h2,h3 {
-    font-family: 'Play', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #fff; 
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
 }
