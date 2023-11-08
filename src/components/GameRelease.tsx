@@ -53,7 +53,7 @@ function GameList() {
 
       <ul>
         {games.map((game) => (
-          <li key={game.id}><p>{game.name}</p><div><img src={game.background_image} alt=''/></div></li>
+          <li key={game.id}><p>{game.name}</p><div><img className='release-image' src={game.background_image} alt=''/></div></li>
         ))}
       </ul>
     </div>
