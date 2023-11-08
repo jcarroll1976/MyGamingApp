@@ -35,6 +35,7 @@ function GameList() {
       <h2>Games Released in Specific Months</h2>
 
       <select value={selectedMonth} onChange={(e) => setSelectedMonth(Number(e.target.value))}>
+        {/*Options for all 12 months */}
         <option value={1}>January</option>
         <option value={2}>February</option>
         <option value={3}>March</option>
@@ -47,7 +48,7 @@ function GameList() {
         <option value={10}>October</option>
         <option value={11}>November</option>
         <option value={12}>December</option>
-        {/* Add options for all 12 months */}
+        
       </select>
 
       <ul>

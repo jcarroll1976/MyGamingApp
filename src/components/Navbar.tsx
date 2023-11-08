@@ -9,10 +9,7 @@ export default function Navbar() {
         <div>
             <h1><Link to="/">Josh's Games</Link></h1>
         </div>
-    {/*Middle*/}
-        <div>
-            <input type="text" placeholder='Search games...' />
-        </div>
+
     {/*Right Side*/}
         <div>
             <ul className='navbarList'>
