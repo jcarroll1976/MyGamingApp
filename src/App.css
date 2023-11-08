@@ -4,6 +4,10 @@
     object-fit: cover;
 }
 
+.gameImage-div {
+    margin-right: 15px;
+}
+
 .results-list {
     display: flex;
     flex-wrap: wrap;
