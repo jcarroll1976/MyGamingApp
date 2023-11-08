@@ -21,8 +21,8 @@ export function fetchSearchResults(slug:string):Promise<SearchResponse> {
     .then((response) => response.data)
 }
 
-export function fetchGamesByMonth(startDate: string, endDate: string): Promise<Game[]> {
+export function fetchGamesByMonth(startDate: string, endDate: string): Promise<ReleaseResponse> {
     return axios.get<ReleaseResponse>(`https://api.rawg.io/api/games?key=${apiKey}&dates=${startDate},${endDate}&ordering=released,rated&page_size=25`)
-      .then((response) => response.data.results);
+      .then((response) => response.data);
   
 }

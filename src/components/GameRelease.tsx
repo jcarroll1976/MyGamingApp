@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { fetchGamesByMonth } from '../services/GameApiService';
-import { Game } from '../models/GameResponse';
+import { Game, ReleaseResponse } from '../models/GameResponse';
+import "./GameRelease.css"
+import { Link } from 'react-router-dom';
 
 
 function GameList() {
-  const [games, setGames] = useState<Game[]>([]);
+  const [games, setGames] = useState<ReleaseResponse>();
   const [selectedMonth, setSelectedMonth] = useState<number>(1); // Default to January
 
   useEffect(() => {
@@ -52,8 +54,8 @@ function GameList() {
       </select>
 
       <ul>
-        {games.map((game) => (
-          <li key={game.id}><p>{game.name}</p><div><img className='release-image' src={game.background_image} alt=''/></div></li>
+        {games?.results.map((game) => (
+          <li key={game.id}><p><Link to = {`/game/${game.slug}`}>{game.name}</Link></p><div><img className='release-image' src={game.background_image} alt=''/></div></li>
         ))}
       </ul>
     </div>
