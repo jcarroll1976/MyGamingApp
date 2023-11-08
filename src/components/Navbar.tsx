@@ -16,8 +16,8 @@ export default function Navbar() {
     {/*Right Side*/}
         <div>
             <ul className='navbarList'>
-                <li className='navbarlistItem'>Login</li>
-                <li className='navbarlistItem'>Sign Up</li>
+                <Link to="/search"><li className='navbarlistItem'>Search</li></Link>
+                <Link to="/releases"><li className='navbarlistItem'>Release Schedule</li></Link>
             </ul>
         </div>
     </div>
