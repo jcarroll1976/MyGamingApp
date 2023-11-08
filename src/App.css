@@ -16,4 +16,10 @@ h2,h3 {
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #000,#333);
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
 }
