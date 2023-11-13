@@ -26,7 +26,7 @@ function SingleGameDetails() {
         <div>
           <h2>{gameDetails.name}</h2>
           <p dangerouslySetInnerHTML={{ __html: gameDetails.description }} />
-          <p>Released: {gameDetails.released}</p>
+          <p>{gameDetails.released ? (`Released: ${gameDetails.released}`) : "Release Date: TBA"}</p>
           <img src={gameDetails.background_image} alt="Game Background" />
           <img src={gameDetails.background_image_additional} alt="Additional Background" />
           {/* Display other game details as needed */}
