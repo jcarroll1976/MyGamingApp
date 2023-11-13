@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchGamesByMonth } from '../services/GameApiService';
-import { Game, ReleaseResponse } from '../models/GameResponse';
+import { ReleaseResponse } from '../models/GameResponse';
 import "./GameRelease.css"
 import { Link } from 'react-router-dom';
 

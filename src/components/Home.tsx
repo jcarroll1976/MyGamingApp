@@ -22,7 +22,7 @@ function Home() {
             <ul className='results-list'>
                 {results.map((result,i) =>
                 <li key={i}>
-                    <h3><Link to={`/game/${result.slug}`}>{result.name}</Link></h3>
+                    <div className='game-title'><h3><Link to={`/game/${result.slug}`}>{result.name}</Link></h3></div>
                     <div className='gameImage-div'><img className='game-image' src={result.background_image} alt=''/></div>
                 </li>)}
             </ul>

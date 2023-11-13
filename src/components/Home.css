@@ -4,3 +4,8 @@
     align-items: center;
     justify-content: center;
 }
+
+.game-title {
+    white-space: normal;
+    width: 250px;
+}
