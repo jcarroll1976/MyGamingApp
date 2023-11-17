@@ -18,7 +18,7 @@ function GameResults({ gameResults }: GameResultsProps) {
                 {gameResults.results.map((gameResult, index) => (
                   <div key={index}>
                     <h4><Link to={`/game/${gameResult.slug}`}>{gameResult.name}</Link></h4>
-                    <div>
+                    <div className='search-image-container'>
                       <img className='result-image' src={gameResult.background_image} alt='' />
                     </div>
                   </div>
