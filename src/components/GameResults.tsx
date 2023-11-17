@@ -14,7 +14,7 @@ function GameResults({ gameResults }: GameResultsProps) {
         <h2>Search Results:</h2>
         <div>
             {gameResults ? (
-                <div>
+                <div className='search-results'>
                 {gameResults.results.map((gameResult, index) => (
                   <div key={index}>
                     <h4><Link to={`/game/${gameResult.slug}`}>{gameResult.name}</Link></h4>
