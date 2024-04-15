@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { SingleGame } from '../models/GameResponse'; // Import SingleGame interface
 import { fetchSingleGame } from '../services/GameApiService';
+import "./SingleGameDetails.css"
 
 function SingleGameDetails() {
   const { slug } = useParams();
@@ -21,15 +22,19 @@ function SingleGameDetails() {
   }, [slug]);
 
   return (
-    <div>
+    <div className='details-container'>
       {gameDetails ? (
-        <div>
+        <div className='details-container'>
           <h2>{gameDetails.name}</h2>
-          <p dangerouslySetInnerHTML={{ __html: gameDetails.description }} />
-          <p>{gameDetails.released ? (`Released: ${gameDetails.released}`) : "Release Date: TBA"}</p>
-          <img src={gameDetails.background_image} alt="Game Background" />
-          <img src={gameDetails.background_image_additional} alt="Additional Background" />
+          <div className='description-container'>
+            <p dangerouslySetInnerHTML={{ __html: gameDetails.description }} />
+          </div>
+          <p>{gameDetails.released ? (`Release Date: ${gameDetails.released}`) : "Release Date: TBA"}</p>
+          <div className='detailsImage-container'>
+            <img className='game-image' src={gameDetails.background_image} alt="Game Background" />
+            <img className='game-image' src={gameDetails.background_image_additional} alt="Additional Background" />
           {/* Display other game details as needed */}
+          </div>
         </div>
       ) : (
         ("")

@@ -1,0 +1,15 @@
+.details-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description-container {
+    width: 60%;
+}
+
+.detailsImage-container {
+    display: flex;
+}

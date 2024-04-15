@@ -53,7 +53,7 @@ function GameList() {
         
       </select>
 
-      <ul>
+      <ul className='release-results'>
         {games?.results.map((game) => (
           <li key={game.id}><p><Link to = {`/game/${game.slug}`}>{game.name}</Link></p><div><img className='release-image' src={game.background_image} alt=''/></div></li>
         ))}

@@ -25,6 +25,7 @@ function Search({searchTerm,setSearchTerm}: SearchProps) {
   return (
     <div className='search-div'>
         <input
+        className='search-input'
         type='text'
         value={input}
         placeholder='Please enter the name of a game series'

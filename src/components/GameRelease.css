@@ -2,6 +2,11 @@ p {
     color: #fff;
 }
 
+.release-results {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .release-image {
     width: 250px;
     height: 250px;
