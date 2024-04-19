@@ -6,6 +6,11 @@
 }
 
 .game-title {
+    display: flex;
     white-space: normal;
     width: 250px;
+}
+
+.favorites-manager {
+    background-color: transparent;
 }

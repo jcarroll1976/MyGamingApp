@@ -6,6 +6,7 @@ import Search from './components/Search';
 import Home from './components/Home';
 import SingleGameDetails from './components/SingleGameDetails';
 import GameRelease from './components/GameRelease';
+import Favorites from './components/Favorites';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/search' element = {<Search searchTerm = {searchTerm} setSearchTerm = {setSearchTerm} />} />
           <Route path='/game/:slug' element = {<SingleGameDetails />} />
           <Route path='/releases' element = {<GameRelease />} />
+          <Route path="/favorites" element = {<Favorites />} />
         </Routes>
       </Router>
     </div>

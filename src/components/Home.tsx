@@ -27,9 +27,14 @@ function Home() {
                 <li key={i}>
                     <div className='game-title'>
                       <h3><Link to={`/game/${result.slug}`}>{result.name}</Link></h3>
-                      <AiOutlineHeart 
-                        style={{color: "red"}} 
-                      />
+                      <button 
+                        className='favorites-manager' 
+                        style={{color: "red"}}
+                        onClick={() =>
+                        {favorites.includes(result) ? removeFavorite(result) : addFavorite(result)}}
+                      >
+                        {favorites.includes(result) ? <AiFillHeart color='red' /> : <AiOutlineHeart color='red' />}
+                      </button>
                     </div>
                     <div className='gameImage-div'><img className='game-image' src={result.background_image} alt=''/></div>
                 </li>)}

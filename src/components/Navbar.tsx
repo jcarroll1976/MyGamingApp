@@ -15,6 +15,7 @@ export default function Navbar() {
             <ul className='navbarList'>
                 <Link to="/search"><li className='navbarlistItem'>Search</li></Link>
                 <Link to="/releases"><li className='navbarlistItem'>Release Schedule</li></Link>
+                <Link to="/favorites"><li className='navbarlistItem'>Favorites</li></Link>
             </ul>
         </div>
     </div>
