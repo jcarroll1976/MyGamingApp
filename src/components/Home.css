@@ -1,4 +1,4 @@
-.home-div {
+/*.home-div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,4 +13,75 @@
 
 .favorites-manager {
     background-color: transparent;
+}*/
+
+.home-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .results-list {
+    display: flex; /* Make the list container a flexbox */
+    flex-direction: column; /* Allow items to wrap if needed */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .results-list li {
+    flex: 1
+  }
+  
+  
+  .game-title {
+    display: flex;
+    white-space: normal;
+    width: 250px; /* Adjust for larger screens */
+  }
+  
+  .favorites-manager {
+    background-color: transparent;
+  }
+
+  h2 {
+    font-size: 1.2rem; /* Adjust as needed for heading size */
+    text-align: center;
+  }
+
+  .game-title h3 {
+    font-size: 1rem; /* Adjust as needed for title size */
+  }
+
+  .gameImage-div img {
+    width: 100%; /* Adjust as needed for image width */
+    height: auto; /* Maintain aspect ratio */
+    filter: brightness(120%); /* Brighten the image by 20% */
+  }
+
+  .game-title {
+    width: 100%; /* Optional: Full width for title on mobile */
+  }
+
+  /* Media queries for different screen sizes */
+
+/* Tablet landscape (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    .results-list {
+      flex-direction: row; /* Change to row layout for tablets */
+      justify-content: space-around; /* Distribute items with some space */
+      align-items: flex-start; /* Align content at top */
+    }
+  
+    .gameImage-div img {
+      width: 200px; /* Adjust image width for tablets */
+    }
+  
+    /* Optional adjustments for game title font size, etc. on tablets */
+  }
+  
+  /* Desktop (min-width: 1024px) */
+  @media screen and (min-width: 1024px) {
+    .gameImage-div img {
+      width: 300px; /* Adjust image width for desktops */
+    }
 }

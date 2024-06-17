@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import FavoritesContext from "../context/FavortitesContext";
+import FavoritesContext from "../context/FavoritesContext";
 
 import { Results } from "../models/GameResponse";
 

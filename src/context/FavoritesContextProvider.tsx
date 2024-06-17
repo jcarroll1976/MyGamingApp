@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react";
 import { Results } from "../models/GameResponse";
-import FavoritesContext from "./FavortitesContext";
+import FavoritesContext from "./FavoritesContext";
 
 interface Props {children: ReactNode}
 
