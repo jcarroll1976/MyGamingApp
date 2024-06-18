@@ -7,7 +7,7 @@ interface GameResultsProps {
   gameResults: SearchResponse | undefined;
 }
 
-function GameResults({ gameResults }: GameResultsProps) {
+function GameRelease({ gameResults }: GameResultsProps) {
   return (
     <div>
       <div>
@@ -34,4 +34,4 @@ function GameResults({ gameResults }: GameResultsProps) {
   );
 }
 
-export default GameResults;
+export default GameRelease;

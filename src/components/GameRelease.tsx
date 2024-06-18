@@ -52,12 +52,13 @@ function GameList() {
         <option value={12}>December</option>
         
       </select>
-
+      <div>
       <ul className='release-results'>
         {games?.results.map((game) => (
-          <li key={game.id}><p><Link to = {`/game/${game.slug}`}>{game.name}</Link></p><div><img className='release-image' src={game.background_image} alt=''/></div></li>
+          <li key={game.id}><p><Link to = {`/game/${game.slug}`}>{game.name}</Link></p><div>{game.background_image ? <img className='release-image' src={game.background_image} alt='No BackgroundImage Available'/>: <p>No Background Image Available</p>}</div></li>
         ))}
       </ul>
+      </div>
     </div>
   );
 }

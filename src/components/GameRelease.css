@@ -1,4 +1,4 @@
-p {
+/*p {
     color: #fff;
 }
 
@@ -11,4 +11,66 @@ p {
     width: 250px;
     height: 250px;
     object-fit: cover;
-}
+}*/
+
+.release-results {
+    display: flex; /* Make the list container a flexbox */
+    flex-direction: column; /* Allow items to wrap if needed */
+    justify-content: center; /* Distribute items horizontally */
+    align-items: center; /* Vertically center items within the list */
+    /* Optional: Add some margin/padding for spacing */
+    /*margin: 10px 0; /* Add some top and bottom margin */
+    /*padding: 5px; /* Add some padding for visual separation */
+  }
+  
+  .release-results li {
+    flex: 1; /* Make each list item take up equal space */
+    /* Optional: Add some margin/padding for spacing */
+    margin: 5px; /* Add some margin for separation */
+    padding: 10px; /* Add some padding for content separation */
+    /* Optional: Set a background color for better separation */
+    /*background-color: #f5f5f5; /* Light gray background for better contrast */
+  }
+  
+  .release-image {
+    width: 100%; /* Adjust as needed for image width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Resize image to fill container */
+  }
+  
+  .game-title {
+    display: flex; /* Make the title container a flexbox */
+    align-items: center; /* Vertically center title content */
+    /* Optional: Add some margin/padding for spacing */
+    margin-bottom: 5px; /* Add some bottom margin for separation */
+  }
+  
+  h2 {
+    font-size: 1.2rem; /* Adjust as needed for heading size */
+    text-align: center; /* Center the heading text */
+  }
+  
+  /* Media queries for different screen sizes (optional) */
+  
+  @media (min-width: 768px) {
+    .release-results {
+      flex-direction: row;
+      justify-content: space-around; /* Distribute items with some space on tablets */
+      align-items: flex-start;
+    }
+  
+    .release-image {
+      width: 200px; /* Adjust image width for tablets */
+    }
+  
+    /* Optional adjustments for font sizes, spacing on tablets */
+  }
+  
+  @media (min-width: 1024px) {
+    .release-image {
+      width: 300px; /* Adjust image width for desktops */
+    }
+  
+    /* Optional adjustments for font sizes, spacing on desktops */
+  }
+  
