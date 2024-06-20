@@ -17,7 +17,7 @@ function Home() {
     })
   },[])
   return (
-    <div>
+    <main>
         <div>
             <h2>Top 25 Latest Releases of {currentYear}</h2>
         </div>
@@ -36,11 +36,11 @@ function Home() {
                         {favorites.includes(result) ? <AiFillHeart color='red' /> : <AiOutlineHeart color='red' />}
                         </button>*/}
                     </div>
-                    <div className='gameImage-div'><img className='game-image' src={result.background_image} alt=''/></div>
+                    <div className='gameImage-div'><img src={result.background_image} alt=''/></div>
                 </li>)}
             </ul>
         </div>
-    </div>
+    </main>
   )
 }
 

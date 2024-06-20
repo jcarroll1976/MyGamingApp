@@ -23,7 +23,7 @@
   
   .results-list {
     display: flex; /* Make the list container a flexbox */
-    flex-direction: column; /* Allow items to wrap if needed */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
   }

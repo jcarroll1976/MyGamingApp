@@ -1,4 +1,4 @@
-.details-container {
+/*.details-container {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -12,4 +12,102 @@
 
 .detailsImage-container {
     display: flex;
-}
+}*/
+
+/* Base styles for mobile */
+.details-container {
+    /*height: 100vh;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; /* Add some padding for better visuals on mobile */
+  }
+  
+  .description-container {
+    width: 100%; /* Make description container take full width on mobile */
+  }
+  
+  .detailsImage-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+    justify-content: space-between; /* Space images evenly on mobile */
+    margin-top: 1rem; /* Add some margin for better spacing */
+  }
+  
+  .game-image {
+    width: 100%; /* Make images responsive on mobile */
+    object-fit: cover; /* Ensure images fill container while maintaining aspect ratio */
+  }
+  
+  /* Media Queries */
+  
+  /* For screens wider than 768px (tablets) */
+  @media (min-width: 768px) {
+    .details-container {
+      padding: 2rem; /* Increase padding for larger screens */
+    }
+  
+    .description-container {
+      width: 60%; /* Set desired width for description on tablets */
+    }
+  
+    .detailsImage-container {
+      justify-content: flex-start; /* Images stacked on top of each other */
+    }
+  
+    .game-image:first-child {
+      width: 70%; /* Adjust width for first image on tablets */
+    }
+  
+    .game-image:last-child {
+      width: 30%; /* Adjust width for second image on tablets */
+    }
+  }
+  
+  /* For screens wider than 1024px (laptops) */
+  @media (min-width: 1024px) {
+    .details-container {
+      padding: 3rem; /* Further increase padding for larger screens */
+    }
+  
+    .description-container {
+      width: 50%; /* Adjust width for description on laptops */
+    }
+  
+    .detailsImage-container {
+      /* Maintain layout from previous media query for now */
+    }
+  
+    .game-image:first-child {
+      /* Maintain width from previous media query for now */
+    }
+  
+    .game-image:last-child {
+      /* Maintain width from previous media query for now */
+    }
+  }
+  
+  /* For screens wider than 1440px (large desktops) */
+  @media (min-width: 1440px) {
+    .details-container {
+      padding: 4rem; /* Further increase padding for very large screens */
+    }
+  
+    .description-container {
+      width: 40%; /* Adjust width for description on large desktops */
+    }
+  
+    .detailsImage-container {
+      /* You can adjust layout for very large screens here if needed */
+    }
+  
+    .game-image:first-child {
+      /* You can adjust width for first image on large desktops here if needed */
+    }
+  
+    .game-image:last-child {
+      /* You can adjust width for second image on large desktops here if needed */
+    }
+  }
+  

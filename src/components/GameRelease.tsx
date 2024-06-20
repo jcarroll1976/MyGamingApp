@@ -34,9 +34,11 @@ function GameList() {
 
   return (
     <div>
-      <h2>Games Released in Specific Months</h2>
+      <div className='select-div'>
+        <h2>Games Released in Specific Months</h2>
+      
 
-      <select value={selectedMonth} onChange={(e) => setSelectedMonth(Number(e.target.value))}>
+        <select value={selectedMonth} onChange={(e) => setSelectedMonth(Number(e.target.value))}>
         {/*Options for all 12 months */}
         <option value={1}>January</option>
         <option value={2}>February</option>
@@ -51,13 +53,21 @@ function GameList() {
         <option value={11}>November</option>
         <option value={12}>December</option>
         
-      </select>
-      <div>
-      <ul className='release-results'>
-        {games?.results.map((game) => (
-          <li key={game.id}><p><Link to = {`/game/${game.slug}`}>{game.name}</Link></p><div>{game.background_image ? <img className='release-image' src={game.background_image} alt='No BackgroundImage Available'/>: <p>No Background Image Available</p>}</div></li>
-        ))}
-      </ul>
+        </select>
+      </div>
+      <div className='release-div'>
+        <ul className='release-results'>
+          {games?.results.map((game) => (
+            <li key={game.id}>
+              <div className='release-title'>
+                <h3><Link to = {`/game/${game.slug}`}>{game.name}</Link></h3>
+              </div>
+              <div className='releaseImage-div'>
+                {game.background_image ? <img src={game.background_image} alt='No BackgroundImage Available'/>: <p>No Background Image Available</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
