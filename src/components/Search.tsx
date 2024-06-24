@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import { SearchResponse } from '../models/GameResponse';
 import { fetchSearchResults } from '../services/GameApiService';
 import GameResults from './GameResults';
@@ -23,15 +23,17 @@ function Search({searchTerm,setSearchTerm}: SearchProps) {
         setSearchTerm("");
     }
   return (
-    <div className='search-div'>
-        <input
-        className='search-input'
-        type='text'
-        value={input}
-        placeholder='Please enter the name of a game series'
-        onChange={(e) => setInput(e.target.value)}
-        />
-        <button onClick={handleSearch}>Search</button>
+    <div>
+        <div className='search-div'>
+            <input
+            className='search-input'
+            type='text'
+            value={input}
+            placeholder='Please enter the name of a game series'
+            onChange={(e) => setInput(e.target.value)}
+            />
+            <button onClick={handleSearch}>Click To Search</button>
+        </div>
         <div>
             <GameResults gameResults={searchResults} />
         </div>
@@ -39,4 +41,5 @@ function Search({searchTerm,setSearchTerm}: SearchProps) {
   )
 }
 
-export default Search
+export default Search;
+

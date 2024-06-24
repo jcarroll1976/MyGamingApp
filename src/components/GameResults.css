@@ -1,4 +1,4 @@
-h4 {
+/*h4 {
     font-family: 'Play', sans-serif;
     color: #fff;
 }
@@ -21,4 +21,108 @@ h4 {
 
 p { 
     color: #fff;
-}
+}*/
+
+/* Default Styles (Mobile) */
+
+h4 {
+    font-family: 'Play', sans-serif;
+    color: #fff;
+    font-size: 1.2rem; /* Adjust as needed */
+  }
+  
+  .search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items on smaller screens */
+    align-items: center;
+  }
+
+ .search-results li {
+    flex: 1
+ }
+
+  .search-results-title {
+    display: flex;
+    white-space: normal;
+    width: 250px;
+  }
+
+  .search-results-title h3 {
+    font-size: 1rem;
+  }
+  
+  .search-image-container {
+    margin-right: 15px;
+    border-radius: 5px;
+  }
+
+  .search-image-container img {
+    width: 100%;
+    height: auto;
+    filter: brightness(120%);
+  }
+  
+  .result-image {
+    width: 100%; /* Fill container width on mobile */
+    height: 150px; /* Adjust image height as needed */
+    object-fit: cover;
+  }
+  
+  p {
+    color: #fff;
+  }
+
+  .mario-div {
+    width: 200px;
+    height: 200px;
+  }
+
+  .mario-div img {
+    width: 100%;
+    height: auto;
+    filter: brightness(120%);
+  }
+  
+  /* Media Query for 768px and Up (Tablets) */
+  @media (min-width: 768px) {
+    .search-results {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around; /* Distribute items with some space on tablets */
+      align-items: flex-start;
+    }
+
+    .search-title {
+      width: 300px;
+    }
+  
+    .search-image-container img {
+      width: 250px; /* Adjust image width for tablets */
+    }
+  
+    /* Optional adjustments for font sizes, spacing on tablets */
+  }
+  
+  /* Media Query for 1024px and Up (Laptops) */
+  @media (min-width: 1024px) {
+    h4 {
+      font-size: 1.4rem; /* Adjust font size for larger screens */
+    }
+  
+    .search-image-container {
+      width: 100%; /* Define container width for a grid layout */
+    }
+  
+    .result-image {
+      height: 250px; /* Increase image height for larger screens */
+    }
+  }
+  
+  /* Media Query for 1440px and Up (Large Screens) */
+  @media (min-width: 1440px) {
+    .search-image-container {
+      width: 25%; /* Adjust container width for wider layouts */
+    }
+  }
+  

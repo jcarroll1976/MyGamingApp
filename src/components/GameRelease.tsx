@@ -35,7 +35,7 @@ function GameList() {
   return (
     <div>
       <div className='select-div'>
-        <h2>Games Released in Specific Months</h2>
+        <h2>Please Select Month for Game Releases</h2>
       
 
         <select value={selectedMonth} onChange={(e) => setSelectedMonth(Number(e.target.value))}>

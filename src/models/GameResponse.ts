@@ -15,6 +15,22 @@ export interface SingleGame {
     released: string,
     background_image: string,
     background_image_additional: string
+    parent_platforms: {
+        platform: {
+            id: number,
+            name: string,
+            slug: string
+        }
+    }[]
+}
+
+export interface Platform {
+    
+}
+
+export interface SinglePlatform {
+    id: number;
+    name: string
 }
 
 export interface SearchResponse {

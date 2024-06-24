@@ -1,4 +1,4 @@
-.search-div {
+/*.search-div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,4 +8,47 @@
 .search-input {
     width: 17%;
     border-radius: 5px;
-}
+}*/
+
+/* Base styles for mobile (apply styles first) */
+.search-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* Add some padding for better visuals */
+  }
+  
+  .search-input {
+    width: 100%; /* Make input full width on mobile */
+    border-radius: 5px;
+    padding: 0.5rem; /* Add some padding for input */
+    margin-bottom: 1rem; /* Add some space between input and button */
+  }
+  
+  /* Media queries for larger screens */
+  
+  @media (min-width: 768px) {
+    .search-div {
+      flex-direction: row; /* Change to row for larger screens */
+      justify-content: space-between; /* Space elements horizontally */
+      padding: 2rem; /* Adjust padding for bigger screens */
+    }
+  
+    .search-input {
+      width: 60%; /* Adjust input width for medium screens */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .search-input {
+      width: 40%; /* Adjust input width for large screens */
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .search-input {
+      width: 30%; /* Adjust input width for extra-large screens */
+    }
+  }
+  

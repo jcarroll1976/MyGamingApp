@@ -2,36 +2,48 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SearchResponse } from '../models/GameResponse';
 import "./GameResults.css";
+import marioPic from "../../src/mario-pic.jpg"
 
 interface GameResultsProps {
   gameResults: SearchResponse | undefined;
 }
 
-function GameRelease({ gameResults }: GameResultsProps) {
+function GameResults({ gameResults }: GameResultsProps) {
   return (
     <div>
-      <div>
-        <h2>Search Results:</h2>
-        <div>
-            {gameResults ? (
-                <div className='search-results'>
-                {gameResults.results.map((gameResult, index) => (
-                  <div key={index}>
-                    <h4><Link to={`/game/${gameResult.slug}`}>{gameResult.name}</Link></h4>
-                    <div className='search-image-container'>
-                      <img className='result-image' src={gameResult.background_image} alt='' />
-                    </div>
-                  </div>
-                ))
-                }
-                </div>
-            ) : (("Enter the name of a game"))}
-            
-            
+      
+      {gameResults ? (
+        <ul className='search-results'>
+          {gameResults.results.map((gameResult, index) => (
+          <li  className="search-result" key={index}>
+            <div className='search-results-title'>
+              <h3><Link to={`/game/${gameResult.slug}`}>{gameResult.name}</Link></h3>
+            </div>
+            <div className='search-image-container'>
+              <img className='result-image' src={gameResult.background_image} alt='' />
+            </div>
+          </li>
+              ))
+            }
+        </ul>
+          ) : (
+          <div>
+            <h2>Find A Great Game!</h2>
+            <div className='mario-div'>
+              <img src={marioPic} alt='Pic of Mario' />
+            </div>
         </div>
-      </div>
+        )}
+            
+            
     </div>
+      
+    
   );
 }
 
-export default GameRelease;
+export default GameResults;
+
+
+
+
