@@ -74,13 +74,14 @@ h4 {
   }
 
   .mario-div {
-    width: 200px;
-    height: 200px;
+    width: 200px; /* Base width for smaller screens */
+    height: 200px; /* Base height for smaller screens */
+    margin: 0 auto; /* Center the image horizontally */
   }
 
   .mario-div img {
     width: 100%;
-    height: auto;
+    height: auto; /* Maintain aspect ratio */
     filter: brightness(120%);
   }
   
@@ -99,30 +100,40 @@ h4 {
   
     .search-image-container img {
       width: 250px; /* Adjust image width for tablets */
+      height: 150px;
     }
   
+    .mario-div {
+        width: 300px; /* Adjust width for medium screens */
+        height: 300px; /* Adjust height for medium screens */
+      }
     /* Optional adjustments for font sizes, spacing on tablets */
   }
   
   /* Media Query for 1024px and Up (Laptops) */
   @media (min-width: 1024px) {
-    h4 {
-      font-size: 1.4rem; /* Adjust font size for larger screens */
+    .search-image-container img {
+      width: 300px; /* Adjust image width for desktops */
     }
+
+    .mario-div {
+        width: 400px; /* Adjust width for large screens */
+        height: 400px; /* Adjust height for large screens */
+      }
   
-    .search-image-container {
-      width: 100%; /* Define container width for a grid layout */
-    }
-  
-    .result-image {
-      height: 250px; /* Increase image height for larger screens */
-    }
+    /* Optional adjustments for font sizes, spacing on desktops */
   }
+  
   
   /* Media Query for 1440px and Up (Large Screens) */
   @media (min-width: 1440px) {
     .search-image-container {
       width: 25%; /* Adjust container width for wider layouts */
+    }
+
+    .mario-div {
+        width: 500px; /* Adjust width for extra large screens (optional) */
+        height: 500px; /* Adjust height for extra large screens (optional) */
     }
   }
   

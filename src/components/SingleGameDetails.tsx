@@ -29,27 +29,31 @@ function SingleGameDetails() {
   }, [slug]);
 
   return (
-    <div className='details-container'>
+    <div>
       {gameDetails ? (
         <div className='details-container'>
-          <h2>{gameDetails.name}</h2>
           <div className='description-container'>
-          <p dangerouslySetInnerHTML={{ __html: gameDetails.description.replace(/\n/g, "<br> <br>") }} />
+            <h2>{gameDetails.name}</h2>
+            <p dangerouslySetInnerHTML={{ __html: gameDetails.description.replace(/\n/g, "<br> <br>") }} />
+            <p>{gameDetails.released ? (`Release Date: ${gameDetails.released}`) : "Release Date: TBA"}</p>
+            <div>
+              <p>Game Platforms:</p>
+              <div className='platform-container'>
+              {gameDetails.parent_platforms.map((platform) => (
+              <p key={platform.platform.id}>{platform.platform.name}</p>
+            ))}
+              </div>
+            </div>
           </div>
-          <p>{gameDetails.released ? (`Release Date: ${gameDetails.released}`) : "Release Date: TBA"}</p>
           <div className='detailsImage-container'>
             {gameDetails.background_image ? <img className='game-image' src={gameDetails.background_image} alt="Game Background" /> :<p>No Image Available</p>}
             {gameDetails.background_image_additional ? <img className='game-image' src={gameDetails.background_image_additional} alt="Additional Background" /> : <p>No Image Available</p>}
-            {gameDetails.parent_platforms.map((platform) => (
-              <p key={platform.platform.id}>{platform.platform.name}</p>
-            ))}
           {/* Display other game details as needed */}
           </div>
         </div>
       ) : (
         ("")
       )}
-      <button onClick={handleBack}>Back To Results</button>
     </div>
   );
 }

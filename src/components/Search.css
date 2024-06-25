@@ -25,6 +25,21 @@
     padding: 0.5rem; /* Add some padding for input */
     margin-bottom: 1rem; /* Add some space between input and button */
   }
+
+  .search-button {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .search-button:hover {
+    background-color: #2980b9;
+  }
   
   /* Media queries for larger screens */
   
@@ -33,6 +48,7 @@
       flex-direction: row; /* Change to row for larger screens */
       justify-content: space-between; /* Space elements horizontally */
       padding: 2rem; /* Adjust padding for bigger screens */
+
     }
   
     .search-input {

@@ -29,10 +29,10 @@ function Search({searchTerm,setSearchTerm}: SearchProps) {
             className='search-input'
             type='text'
             value={input}
-            placeholder='Please enter the name of a game series'
+            placeholder='Please enter the name of a game or series'
             onChange={(e) => setInput(e.target.value)}
             />
-            <button onClick={handleSearch}>Click To Search</button>
+            <button className='search-button' onClick={handleSearch}>Click To Search</button>
         </div>
         <div>
             <GameResults gameResults={searchResults} />

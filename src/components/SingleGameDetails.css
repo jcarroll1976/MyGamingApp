@@ -15,6 +15,10 @@
 }*/
 
 /* Base styles for mobile */
+
+button {
+  text-align: center;
+}
 .details-container {
     /*height: 100vh;*/
     display: flex;
@@ -34,10 +38,22 @@
     justify-content: space-between; /* Space images evenly on mobile */
     margin-top: 1rem; /* Add some margin for better spacing */
   }
+
+  .detailsImage-container p {
+    margin-right: 10px;
+  }
   
   .game-image {
     width: 100%; /* Make images responsive on mobile */
     object-fit: cover; /* Ensure images fill container while maintaining aspect ratio */
+  }
+
+  .platform-container {
+    display: flex;
+  }
+
+  .platform-container p {
+    margin-right: 10px;
   }
   
   /* Media Queries */
@@ -66,27 +82,59 @@
   }
   
   /* For screens wider than 1024px (laptops) */
-  @media (min-width: 1024px) {
+  /*@media (min-width: 1024px) {
     .details-container {
-      padding: 3rem; /* Further increase padding for larger screens */
+      padding: 3rem; /* Further increase padding for larger screens 
     }
   
     .description-container {
-      width: 50%; /* Adjust width for description on laptops */
+      width: 50%; /* Adjust width for description on laptops 
     }
   
     .detailsImage-container {
-      /* Maintain layout from previous media query for now */
+      /* Maintain layout from previous media query for now 
     }
   
     .game-image:first-child {
-      /* Maintain width from previous media query for now */
+      /* Maintain width from previous media query for now 
     }
   
     .game-image:last-child {
-      /* Maintain width from previous media query for now */
+      /* Maintain width from previous media query for now 
     }
+  }*/
+
+  @media (min-width: 1024px) {
+    .details-container {
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 3rem; /* Further increase padding for larger screens */
+      margin-bottom: 2rem;
+    }
+  
+    .description-container {
+      width: 50%;;
+      padding-right: 20px;
+      justify-content: flex-start;
+    }
+  
+    .detailsImage-container {
+      width: 50%;
+      text-align: center; /* Center content within the image container */
+    }
+  
+    .game-image:first-child {
+        width: 70%; /* Adjust width for first image on tablets */
+      }
+    
+      .game-image:last-child {
+        width: 70%; /* Adjust width for second image on tablets */
+      }
   }
+  
   
   /* For screens wider than 1440px (large desktops) */
   @media (min-width: 1440px) {

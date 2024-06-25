@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SearchResponse } from '../models/GameResponse';
 import "./GameResults.css";
-import marioPic from "../../src/mario-pic.jpg"
+import marioPic from "../../src/mario_PNG124.png"
 
 interface GameResultsProps {
   gameResults: SearchResponse | undefined;
@@ -13,6 +13,8 @@ function GameResults({ gameResults }: GameResultsProps) {
     <div>
       
       {gameResults ? (
+        <div>
+          <h2>Click on Game Title for More Details</h2>
         <ul className='search-results'>
           {gameResults.results.map((gameResult, index) => (
           <li  className="search-result" key={index}>
@@ -26,6 +28,7 @@ function GameResults({ gameResults }: GameResultsProps) {
               ))
             }
         </ul>
+      </div>
           ) : (
           <div>
             <h2>Find A Great Game!</h2>
