@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SearchResponse } from '../models/GameResponse';
 import { fetchSearchResults } from '../services/GameApiService';
 import GameResults from './GameResults';
 import "./Search.css";
+import { DotLoader } from 'react-spinners';
 
 interface SearchProps {
     setSearchTerm: (input:string) => void;
@@ -12,15 +13,22 @@ interface SearchProps {
 function Search({searchTerm,setSearchTerm}: SearchProps) {
     const [input,setInput] = useState("");
     const [searchResults,setSearchResults] = useState<SearchResponse | undefined>();
+    const [isLoading,setIsLoading] = useState(false);
+
+    useEffect(() => {
+        if (searchTerm) {
+          setIsLoading(true);
+          fetchSearchResults(searchTerm)
+            .then(data => setSearchResults(data))
+            .catch(error => console.error("Error fetching search results:", error))
+            .finally(() => setIsLoading(false));
+        }
+      }, [searchTerm]);
 
     const handleSearch = () => {
         let slug = input.split(" ").join("-").toLowerCase();
         setSearchTerm(slug);
-        fetchSearchResults(slug).then(data => {
-            setSearchResults(data);
-        })
         setInput("");
-        setSearchTerm("");
     }
   return (
     <div>
@@ -32,10 +40,17 @@ function Search({searchTerm,setSearchTerm}: SearchProps) {
             placeholder='Please enter the name of a game or series'
             onChange={(e) => setInput(e.target.value)}
             />
-            <button className='search-button' onClick={handleSearch}>Click To Search</button>
+            <button className='search-button' onClick={handleSearch} disabled={isLoading}>{isLoading ? "Searching..." : "Click To Search"}</button>
         </div>
         <div>
-            <GameResults gameResults={searchResults} />
+            {isLoading ? (
+                <div className='loading-message'>
+                    <DotLoader color='white' />
+                    <p>Searching for Games...</p>
+                </div>
+            ) : (
+            <GameResults gameResults={searchResults} isLoading={isLoading} />
+            )}
         </div>
     </div>
   )

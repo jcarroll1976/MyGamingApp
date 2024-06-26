@@ -5,23 +5,37 @@ import {Link} from "react-router-dom";
 import "./Home.css"
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import FavoritesContext from '../context/FavoritesContext';
+import DotLoader from "react-spinners/DotLoader";
 
 function Home() {
     const {favorites, addFavorite,removeFavorite} = useContext(FavoritesContext);
     const [results,setResults] = useState<Results[]>([]);
     const currentYear = new Date().getFullYear();
+    const [isLoading,setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchGames().then(data => {
       setResults(data);
+      setIsLoading(false);
     })
+    .catch(error => {
+      console.error("Error fetching games:", error);
+      setIsLoading(false); // Set loading to false even on error
+    });
   },[])
+
   return (
     <main>
         <div className='home-message'>
             <h2>Top 25 Latest Releases of {currentYear}</h2>
             <p>Click On Game Title For More Details</p>
         </div>
+        {isLoading ? (
+          <div className='loading-message'>
+            <DotLoader color='white' />
+            <p>Loading Games...</p>
+          </div>
+        ) : (
         <div className='home-div'>
             <ul className='results-list'>
                 {results.map((result,i) =>
@@ -41,6 +55,7 @@ function Home() {
                 </li>)}
             </ul>
         </div>
+        )}
     </main>
   )
 }

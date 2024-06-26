@@ -54,6 +54,7 @@ function GameList() {
         <option value={12}>December</option>
         
         </select>
+        <h2>Click on Game Title For More Details</h2>
       </div>
       <div className='release-div'>
         <ul className='release-results'>

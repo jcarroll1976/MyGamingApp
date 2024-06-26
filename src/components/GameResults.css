@@ -25,6 +25,11 @@ p {
 
 /* Default Styles (Mobile) */
 
+
+h2 {
+  color:#fff;
+}
+
 h4 {
     font-family: 'Play', sans-serif;
     color: #fff;

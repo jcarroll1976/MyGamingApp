@@ -11,6 +11,16 @@
 }*/
 
 /* Base styles for mobile (apply styles first) */
+.loading-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  color: #3498db;
+}
+
 .search-div {
     display: flex;
     flex-direction: column;
