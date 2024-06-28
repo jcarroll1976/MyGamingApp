@@ -73,12 +73,13 @@ function SingleGameDetails() {
             {gameDetails.background_image_additional ? <img className='game-image' src={gameDetails.background_image_additional} alt="Additional Background" /> : <p>No Image Available</p>}
           {/* Display other game details as needed */}
           </div>
+          <div className='back-button-div'><button className='back-button' onClick={handleBack}>Back</button></div>
         </div>
       ) : (
         ("")
       )}
-      <div className='back-button-div'><button className='back-button' onClick={handleBack}>Back to Search Results</button></div>
       {showFullDescription && ( // Conditionally render modal content
+          <div className='modal-backdrop'>
             <div className="modal">
               <div className='modal-content'>
               <h2>{gameDetails?.name}</h2>
@@ -88,6 +89,7 @@ function SingleGameDetails() {
               </button>
               </div>
             </div>
+          </div>
           )}
     </div>
   );

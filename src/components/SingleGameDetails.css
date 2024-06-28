@@ -21,6 +21,7 @@
 
 .back-button-div {
   text-align: center;
+  padding: 1rem 2rem;
 }
 
 .back-button {
@@ -104,6 +105,17 @@
   margin: 1rem;
   padding: 1rem/* 16px */;
   cursor: pointer;
+}
+
+.modal-backdrop {
+  position: fixed; /* Ensures backdrop covers entire viewport */
+  top: 0; /* Position at top of the viewport */
+  left: 0; /* Position at left of the viewport */
+  width: 100%; /* Span the entire width and height */
+  height: 100%; /* Span the entire width and height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  backdrop-filter: blur(5px); /* Apply blur filter */
+  z-index: 0; /* Place behind the modal content (adjustable) */
 }
 
   
