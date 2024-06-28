@@ -81,12 +81,14 @@ function SingleGameDetails() {
       {showFullDescription && ( // Conditionally render modal content
           <div className='modal-backdrop'>
             <div className="modal">
-              <div className='modal-content'>
-              <h2>{gameDetails?.name}</h2>
-              <p dangerouslySetInnerHTML={{ __html: gameDetails!.description }} />
-              <button onClick={() => setShowFullDescription(false)}>
+              <div className='modal-header'>
+                <h2>{gameDetails?.name}</h2>
+                <button onClick={() => setShowFullDescription(false)}>
                 Close
               </button>
+              </div>
+              <div className='modal-content-scrollable'>
+                <p dangerouslySetInnerHTML={{ __html: gameDetails!.description }} />
               </div>
             </div>
           </div>

@@ -48,6 +48,13 @@
   .description-container {
     width: 100%; /* Make description container take full width on mobile */
   }
+
+  .description-container button {
+    background-color: transparent;
+    border:none;
+    color: #fff;
+    cursor: pointer;
+  }
   
   .detailsImage-container {
     display: flex;
@@ -75,7 +82,7 @@
 
   .modal {
     position: absolute;
-    top: -150px;
+    top: 0px;
     width: 100%;
     height: 100%;
     /* background-color: rgb(255 255 255 / 0.9); */
@@ -94,7 +101,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 99px;
+  border-radius: 96px;
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -105,6 +112,33 @@
   margin: 1rem;
   padding: 1rem/* 16px */;
   cursor: pointer;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column; /* Arrange elements horizontally */
+  justify-content: space-between; /* Distribute elements evenly */
+  align-items: center; /* Align elements vertically */
+  padding: 1rem; /* Add some padding */
+  /*background-color: rgb(39, 35, 35); /* Light gray background */
+  /*border-bottom: 1px solid #ddd; /* Add a border to separate header from content */
+}
+
+.modal-content-scrollable {
+  /*background-color: rgb(39, 35, 35);*/
+  font-weight: bold;
+  height: calc(100vh - (fit-content + 2rem)); /* Adjust height based on fixed content and padding */
+  /*margin: 1rem;*/
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 2rem; /* Add some padding for readability */
+}
+
+.modal button { /* Style the close button */
+  background-color: transparent; /* Remove default button background */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Indicate clickable element */
+  color: #fff; /* Black text color */
+  font-size: 1.2rem; /* Adjust font size for close button */
 }
 
 .modal-backdrop {
