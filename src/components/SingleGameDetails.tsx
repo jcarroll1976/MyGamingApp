@@ -10,6 +10,7 @@ function SingleGameDetails() {
   const navigate = useNavigate();
   const { slug } = useParams();
   const [gameDetails, setGameDetails] = useState<SingleGame | null>(null);
+  const [showFullDescription, setShowFullDescription] = useState(false);
 
   const removeHtmlTags = (input:string) => {
     return input.replace(/<[^>]*>/g, ''); // Use a regular expression to remove HTML tags
@@ -19,22 +20,44 @@ function SingleGameDetails() {
     navigate("/search");
   }
 
+  const decodeDescription = (description: string) => {
+    const decodedDescription = description.replace(/&#39;/g, "'");
+    return decodedDescription;
+  };
+
+  const handleShowFullDescription = () => {
+    setShowFullDescription(true);
+  };
+
+  const splitDescription = gameDetails?.description.split('\n\n');
+
   useEffect(() => {
     if (slug) {
         fetchSingleGame(slug).then(data => {
-            data.description = removeHtmlTags(data.description);
+            data.description = decodeDescription(removeHtmlTags(data.description));
             setGameDetails(data);
         })
     }
   }, [slug]);
 
   return (
-    <div>
+    <div className='container'>
       {gameDetails ? (
         <div className='details-container'>
           <div className='description-container'>
             <h2>{gameDetails.name}</h2>
-            <p dangerouslySetInnerHTML={{ __html: gameDetails.description.replace(/\n/g, "<br> <br>") }} />
+            <p>
+              {gameDetails.description.length > 450 ? (
+                <>
+                  {gameDetails.description.substring(0, 450)}...{' '}
+                  <button onClick={handleShowFullDescription}>
+                    Read More
+                  </button>
+                </>
+              ) : (
+                gameDetails.description
+              )}
+            </p>
             <p>{gameDetails.released ? (`Release Date: ${gameDetails.released}`) : "Release Date: TBA"}</p>
             <div>
               <p>Game Platforms:</p>
@@ -54,6 +77,18 @@ function SingleGameDetails() {
       ) : (
         ("")
       )}
+      <div className='back-button-div'><button className='back-button' onClick={handleBack}>Back to Search Results</button></div>
+      {showFullDescription && ( // Conditionally render modal content
+            <div className="modal">
+              <div className='modal-content'>
+              <h2>{gameDetails?.name}</h2>
+              <p dangerouslySetInnerHTML={{ __html: gameDetails!.description }} />
+              <button onClick={() => setShowFullDescription(false)}>
+                Close
+              </button>
+              </div>
+            </div>
+          )}
     </div>
   );
 }

@@ -15,12 +15,28 @@
 }*/
 
 /* Base styles for mobile */
+.container {
+  position: relative;
+}
 
-button {
+.back-button-div {
   text-align: center;
 }
+
+.back-button {
+  background-color: #3498db;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
 .details-container {
     /*height: 100vh;*/
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,6 +71,41 @@ button {
   .platform-container p {
     margin-right: 10px;
   }
+
+  .modal {
+    position: absolute;
+    top: -150px;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(255 255 255 / 0.9); */
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+  
+.modal-content {
+  color: #000;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 99px;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-bg-opacity: 1;
+  background-color: rgb(39, 35, 35);
+  --tw-shadow-color: #9ca3af;
+  --tw-shadow: var(--tw-shadow-colored);
+  margin: 1rem;
+  padding: 1rem/* 16px */;
+  cursor: pointer;
+}
+
   
   /* Media Queries */
   
@@ -78,6 +129,11 @@ button {
   
     .game-image:last-child {
       width: 30%; /* Adjust width for second image on tablets */
+    }
+
+    .modal {
+      position: absolute;
+      top:0px;
     }
   }
   
@@ -132,6 +188,11 @@ button {
     
       .game-image:last-child {
         width: 70%; /* Adjust width for second image on tablets */
+      }
+
+      .modal {
+        position: absolute;
+        top: 0px;
       }
   }
   
