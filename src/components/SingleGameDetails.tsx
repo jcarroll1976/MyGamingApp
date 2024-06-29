@@ -85,19 +85,21 @@ function SingleGameDetails() {
           <div className='back-button-div'><button className='back-button' onClick={handleBack}>Back</button></div>
         </div>
       ) : (
-        ("")
+        <h2>No Details Available</h2>
       )}
       {showFullDescription && ( // Conditionally render modal content
           <div className='modal-backdrop'>
             <div className="modal">
               <div className='modal-header'>
                 <h2>{gameDetails?.name}</h2>
-                <button onClick={() => setShowFullDescription(false)}>
-                X Close
-              </button>
               </div>
               <div className='modal-content-scrollable'>
                 <p dangerouslySetInnerHTML={{ __html: gameDetails!.description }} />
+                <div className='modal-close-button'>
+                  <button onClick={() => setShowFullDescription(false)}>
+                    X Close
+                  </button>
+                </div>
               </div>
             </div>
           </div>

@@ -141,6 +141,10 @@
   font-size: 1.2rem; /* Adjust font size for close button */
 }
 
+.modal-close-button {
+  text-align: center;
+}
+
 .modal-backdrop {
   position: fixed; /* Ensures backdrop covers entire viewport */
   top: 0; /* Position at top of the viewport */
