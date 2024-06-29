@@ -4,15 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import SearchContextProvider from './context/FavoritesContextProvider';
+import FavoritesContextProvider from './context/FavoritesContextProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <SearchContextProvider>
+    <FavoritesContextProvider>
       <App />
-    </SearchContextProvider>
+    </FavoritesContextProvider>
   </React.StrictMode>
 );
 

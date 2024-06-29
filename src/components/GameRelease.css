@@ -77,6 +77,10 @@
   .select-div {
     text-align: center;
   }
+
+  .select-div select {
+    outline: none;
+  }
   
   /* Media queries for different screen sizes (optional) */
   

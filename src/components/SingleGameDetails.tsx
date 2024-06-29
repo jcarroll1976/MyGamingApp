@@ -17,11 +17,20 @@ function SingleGameDetails() {
   };
 
   const handleBack = () => {
-    navigate("/search");
-  }
+    // navigate(-1) is not recommended in react-router-dom v6+
+    // Use history.goBack() functionality provided by useNavigate
+  
+    // Checks if there's a previous location in history
+    if (window.history.length > 1) {
+      navigate(-1); // Go back to previous page in history
+    } else {
+      // If no previous page, navigate to home
+      navigate("/");
+    }
+  };
 
   const decodeDescription = (description: string) => {
-    const decodedDescription = description.replace(/&#39;/g, "'");
+    const decodedDescription = description.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
     return decodedDescription;
   };
 
@@ -84,7 +93,7 @@ function SingleGameDetails() {
               <div className='modal-header'>
                 <h2>{gameDetails?.name}</h2>
                 <button onClick={() => setShowFullDescription(false)}>
-                Close
+                X Close
               </button>
               </div>
               <div className='modal-content-scrollable'>

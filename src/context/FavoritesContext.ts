@@ -1,16 +1,18 @@
 import { createContext } from "react";
-import { Results } from "../models/GameResponse"
+import { SingleGame } from "../models/GameResponse"
 
 interface FavoritesContextModel {
-    favorites: Results[];
-    addFavorite: (game:Results) => void;
-    removeFavorite: (game:Results) => void;
+    favorites: SingleGame[];
+    addFavorite: (game:SingleGame) => void;
+    removeFavorite: (game:SingleGame) => void;
+    isFavorite:(game: SingleGame) => boolean;
 }
 
 const defaultValue:FavoritesContextModel = {
     favorites: [],
     addFavorite: () => {},
-    removeFavorite: () => {}
+    removeFavorite: () => {},
+    isFavorite: () => false
 }
 
 const FavoritesContext = createContext(defaultValue)

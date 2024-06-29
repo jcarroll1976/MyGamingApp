@@ -1,22 +1,26 @@
 import { ReactNode, useState } from "react";
-import { Results } from "../models/GameResponse";
+import { Results, SingleGame } from "../models/GameResponse";
 import FavoritesContext from "./FavoritesContext";
 
 interface Props {children: ReactNode}
 
 export default function FavoritesContextProvider({children}: Props) {
-    const [favorites,setFavorites] = useState<Results[]>([]);
+    const [favorites,setFavorites] = useState<SingleGame[]>([]);
 
-    function addFavorite(game: Results){
+    function addFavorite(game: SingleGame){
         setFavorites((prevFavorites) => [...prevFavorites, game])
     }
 
-    function removeFavorite(game: Results) {
+    function removeFavorite(game: SingleGame) {
         setFavorites((prevFavorites) => prevFavorites.filter((favorite) => favorite.slug !== game.slug))
     }
 
+    function isFavorite(game: SingleGame) {
+        return favorites.some((favorite) => favorite.slug === game.slug);
+      }
+
     return (
-        <FavoritesContext.Provider value={{favorites, addFavorite,removeFavorite}}>
+        <FavoritesContext.Provider value={{favorites, addFavorite,isFavorite,removeFavorite}}>
             {children}
         </FavoritesContext.Provider>
     )

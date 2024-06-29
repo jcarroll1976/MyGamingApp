@@ -51,7 +51,7 @@
 
   .description-container button {
     background-color: transparent;
-    border:none;
+    border: none;
     color: #fff;
     cursor: pointer;
   }
@@ -207,6 +207,14 @@
   }*/
 
   @media (min-width: 1024px) {
+
+    .back-button-div {
+      position: absolute;
+      top: 95%;
+      left: 40%;
+      margin-top: 2rem;
+    }
+
     .details-container {
       display:flex;
       flex-direction: row;

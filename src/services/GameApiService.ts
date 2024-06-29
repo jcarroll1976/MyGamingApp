@@ -17,7 +17,7 @@ export function fetchSingleGame(slug:string):Promise<SingleGame> {
 }
 
 export function fetchSearchResults(slug:string):Promise<SearchResponse> {
-    return axios.get<SearchResponse>(`https://api.rawg.io/api/games?key=${apiKey}&search=${slug}&search_precise=true`)
+    return axios.get<SearchResponse>(`https://api.rawg.io/api/games?key=${apiKey}&search=${slug}&parent_series=true`)
     .then((response) => response.data)
 }
 

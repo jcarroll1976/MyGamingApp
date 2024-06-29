@@ -12,10 +12,10 @@ export default function Favorites() {
             {favorites.length === 0 ? (
             <p>No favorites yet.</p>) : (
                 <ul>
-                    {favorites.map((game: Results, index: number) => (
+                    {favorites.map((favorite,index) => (
                     <li key={index}>
-                        <h3>{game.name}</h3>
-                        <img src={game.background_image} alt={game.name} />
+                        <h3>{favorite.name}</h3>
+                        <img src={favorite.background_image} alt={favorite.name} />
                     </li>
                     ))}
                 </ul>

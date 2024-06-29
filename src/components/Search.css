@@ -34,6 +34,7 @@
     border-radius: 5px;
     padding: 0.5rem; /* Add some padding for input */
     margin-bottom: 1rem; /* Add some space between input and button */
+    outline: none;
   }
 
   .search-button {
