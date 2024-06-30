@@ -40,7 +40,7 @@ function Home() {
                     <div className='game-title'>
                       <h3><Link to={`/game/${result.slug}`}>{result.name}</Link></h3>
                     </div>
-                    <div className='gameImage-div'><img src={result.background_image} alt=''/></div>
+                    <div className='gameImage-div'>{result.background_image ? <img src={result.background_image} alt=''/> : <p>No Image Available</p>}</div>
                 </li>)}
             </ul>
         </div>
