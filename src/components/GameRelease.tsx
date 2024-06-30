@@ -74,7 +74,7 @@ function GameList() {
                 <h3><Link to = {`/game/${game.slug}`}>{game.name}</Link></h3>
               </div>
               <div className='releaseImage-div'>
-                {game.background_image ? <img src={game.background_image} alt='No BackgroundImage Available'/>: <p>No Background Image Available</p>}
+                {game.background_image ? <img src={game.background_image} alt='No BackgroundImage Available'/>: <p>No Image Available</p>}
               </div>
             </li>
           ))}
