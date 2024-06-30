@@ -54,6 +54,7 @@
     border: none;
     color: #fff;
     cursor: pointer;
+    font-weight: bold;
   }
   
   .detailsImage-container {
