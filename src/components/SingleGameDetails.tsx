@@ -4,13 +4,14 @@ import { SingleGame } from '../models/GameResponse'; // Import SingleGame interf
 import { fetchSingleGame } from '../services/GameApiService';
 import "./SingleGameDetails.css"
 import { useNavigate } from 'react-router-dom';
-import { platformLogos, getPlatformLogo} from "../../src/utils"
+import { DotLoader } from 'react-spinners';
 
 function SingleGameDetails() {
   const navigate = useNavigate();
   const { slug } = useParams();
   const [gameDetails, setGameDetails] = useState<SingleGame | null>(null);
   const [showFullDescription, setShowFullDescription] = useState(false);
+  const [isLoading,setIsLoading] = useState(true);
 
   const removeHtmlTags = (input:string) => {
     return input.replace(/<[^>]*>/g, ''); // Use a regular expression to remove HTML tags
@@ -45,13 +46,21 @@ function SingleGameDetails() {
         fetchSingleGame(slug).then(data => {
             data.description = decodeDescription(removeHtmlTags(data.description));
             setGameDetails(data);
-        })
+            setIsLoading(false);
+        });
+        
     }
   }, [slug]);
 
   return (
     <div className='container'>
-      {gameDetails ? (
+      {isLoading ? (
+        <div className='loading-message'>
+          <DotLoader color='white'/>
+          <p>Loading Game Details...</p>
+        </div>
+      ) : (
+      gameDetails ? (
         <div className='details-container'>
           <div className='description-container'>
             <h2>{gameDetails.name}</h2>
@@ -86,7 +95,7 @@ function SingleGameDetails() {
         </div>
       ) : (
         <h2>No Details Available</h2>
-      )}
+      ))}
       {showFullDescription && ( // Conditionally render modal content
           <div className='modal-backdrop'>
             <div className="modal">

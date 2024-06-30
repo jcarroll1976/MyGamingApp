@@ -3,11 +3,13 @@ import { fetchGamesByMonth } from '../services/GameApiService';
 import { ReleaseResponse } from '../models/GameResponse';
 import "./GameRelease.css"
 import { Link } from 'react-router-dom';
+import { DotLoader } from 'react-spinners';
 
 
 function GameList() {
   const [games, setGames] = useState<ReleaseResponse>();
   const [selectedMonth, setSelectedMonth] = useState<number>(1); // Default to January
+  const [isLoading,setIsLoading] = useState(true);
 
   useEffect(() => {
     const currentYear = new Date().getFullYear();
@@ -25,10 +27,12 @@ function GameList() {
     }
 
     fetchGamesByMonth(startDate,endDate).then(data => {
-        setGames(data)
+        setGames(data);
+        setIsLoading(false);
     })
       .catch((error) => {
         console.error('Error fetching data:', error);
+        setIsLoading(false);
       });
   }, [selectedMonth]);
 
@@ -56,6 +60,12 @@ function GameList() {
         </select>
         <h2>Click on Game Title For More Details</h2>
       </div>
+      {isLoading ? (
+        <div className='loading-message'>
+          <DotLoader color='white' />
+          <p>Loading Games...</p>
+        </div>
+      ) : (
       <div className='release-div'>
         <ul className='release-results'>
           {games?.results.map((game) => (
@@ -70,6 +80,7 @@ function GameList() {
           ))}
         </ul>
       </div>
+      )}
     </div>
   );
 }

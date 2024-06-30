@@ -72,6 +72,17 @@
     object-fit: cover; /* Ensure images fill container while maintaining aspect ratio */
   }
 
+  .loading-message {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #3498db;
+  }
+  
+
   .platform-container {
     display: flex;
   }

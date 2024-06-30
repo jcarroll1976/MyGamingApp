@@ -24,7 +24,7 @@ function Home() {
   return (
     <main>
         <div className='home-message'>
-            <h2>Top 25 Latest Releases of {currentYear}</h2>
+            <h2>Current Top 25 Releases of {currentYear}</h2>
             <p>Click On Game Title For More Details</p>
         </div>
         {isLoading ? (
