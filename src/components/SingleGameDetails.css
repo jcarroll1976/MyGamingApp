@@ -86,6 +86,7 @@
 
   .platform-container {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .platform-container p {
